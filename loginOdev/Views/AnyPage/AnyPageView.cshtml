@@ -1,0 +1,21 @@
+﻿@model loginOdev.Models.Pages
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AnyPageView</title>
+</head>
+<body>
+    <h1>
+        @Html.DisplayFor(modelItem => Model.PageTitle)
+    </h1>
+    <div> 
+                @Html.Raw(Model.PageContent)
+    </div>
+</body>
+</html>

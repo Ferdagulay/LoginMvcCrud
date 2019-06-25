@@ -1,0 +1,80 @@
+﻿
+
+@model IEnumerable<loginOdev.Models.Pages>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        tr, td {
+            margin:5px;
+          padding: 5px;
+        }
+
+        .container {
+            height: 150px;
+        }
+    </style>
+
+
+
+
+</head>
+
+<div class="container">
+    <table>
+
+        <tr>
+            <td>
+
+                <h5> Sayfa başlığı    </h5>
+            </td>
+            <td>
+
+                <h5>Sayfa İçeriği</h5>
+            </td>
+            <td>
+
+                <h5>    Sayfa Url</h5> 
+            </td>
+
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PageTitle)
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.PageContent)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PageUrl)
+
+                </td>
+                <td>
+             @Html.ActionLink("Create", "Create", new { id = item.PageId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.PageId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PageId })
+                </td>
+            </tr>
+        }
+
+
+    </table>
+
+
+</div>
+
